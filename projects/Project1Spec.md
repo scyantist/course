@@ -13,7 +13,7 @@ will be out of 100 points:
   `src/test/java/edu/berkeley/cs186/database`, so you can run them as you write
   code and inspect the tests to debug. Our testing provides extensive unit
   testing and some integration (end-to-end) testing.
-* 10 points for writing your own, valid tests. The tests **must** pass both
+* 10 points for writing **10** of your own, valid tests. The tests **must** pass both
   your implementation and the staff solution to be considered valid tests.
 * 30 points for passing additional hidden tests.
 
@@ -75,7 +75,9 @@ viewable [here](http://www.cs186berkeley.net/projects/)**.
 All of the projects in this course will involve programming with Java. For
 these projects you should have Java 7 (aka 1.7) installed on your machine,
 **not** Java 8 (aka 1.8). You can download Java 7 from Oracle's
-[website](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
+[website](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u75-oth-JPR).
+
+**NOTE**: If you are a Mac user, you can download [Homebrew](http://brew.sh) and run `brew cask install java7`.
 
 **NOTE**: If you're running Windows, make sure that the JDK directory where you
 installed Java (e.g. `C:\Program Files\Java\jdk1.7.0_79`) is added to both your
@@ -85,17 +87,61 @@ you should know how to do this, otherwise it's good practice to learn.
 ### Maven
 
 For the projects, we’ll be using [Maven](https://maven.apache.org/index.html)
-as our build manager. If you don't have it installed and use a package manager
-like [Homebrew](http://brew.sh) or
-[apt-get](http://linux.die.net/man/8/apt-get) you can run `brew install maven`
-or `sudo apt-get install maven3`, respectively to install Maven. Otherwise, you
-can find more information about
-[downloading](https://maven.apache.org/download.cgi) and
-[installing](https://maven.apache.org/install.html) on their website.
+as our build manager.
+
+If you are a Mac user:
+
+1. Download a package manager like [Homebrew](http://brew.sh) or
+[apt-get](http://linux.die.net/man/8/apt-get)
+2. Run `brew install maven` or `sudo apt-get install maven3`, respectively to install Maven.
+
+If you are a Windows user:
+0. Follow these [instructions](https://www.mkyong.com/maven/how-to-install-maven-in-windows/),
+   which in summary is the following:
+1. Make sure you have Java 1.7 and JAVA_HOME path set to Java 1.7.
+2. [Download](https://maven.apache.org/download.cgi) and
+   [install](https://maven.apache.org/install.html) Apache Maven
+3. Add `M2_HOME`, `MAVEN_HOME` and `PATH`
+4. Verify using `mvn –version`
 
 **NOTE**: If you're running Windows, make sure that the `\bin` directory of the
 unzipped Maven folder (e.g. `C:\Program Files\Maven\bin`) is added to your
 `PATH` environment variable.
+
+### Writing Code
+
+In our experience, using [IntelliJ](https://www.jetbrains.com/idea/download),
+an IDE from [JetBrains](https://www.jetbrains.com/), makes developing in Java a
+lot easier. IntelliJ provides you a bunch of great tools like:
+
+* Maven integration for compilation and testing
+* A debugger that allows you to insert breakpoints and inspect data structure
+  internals visually
+* Automatic syntax checking to catch bugs before compilation
+* Autocomplete that lets you use methods in other files without having to look
+  them up
+
+... and a ton of other stuff!
+
+Last semester, many students had trouble debugging their code without IntelliJ.
+If you come to office hours for help in debugging, the first question we will
+ask is, "Have you tried stepping through it?" Please be forewarned.
+
+### IntelliJ Configuration
+
+1. Open IntelliJ.
+2. Import the project (make sure you're importing the projects folder, which contains pom.xml).
+3. For Windows, set SDK to C:\Program Files\Java\jdk1.7* (Same as JAVA_HOME).
+   For Mac, see this [Stack Overflow
+   post](http://stackoverflow.com/questions/18144660/what-is-path-of-jdk-on-mac).
+4. When importing is done, click the top right corner and search for Maven.
+   Then click on Maven projects.
+5. In the Maven projects panel, you should see the project. If not, refresh.
+6. In the lifecycle drag-down menu, double-click on compile to build the
+   project. Double-click on test after compiling.
+7. You should be able to pass 146 tests.
+
+### Compiling and Running Tests
 
 To compile your code, you can run `mvn clean compile`. To run all of the tests
 that we've provided for you, you can run `mvn test`. To run a single test file,
@@ -114,24 +160,27 @@ code should be passing. Please ensure that they are before moving forward. If
 those components are not working properly on your system, then it's likely that
 none of the rest of the code will either!
 
-### Writing Code
+### Autograding and Submission
 
-In our experience, using [IntelliJ](https://www.jetbrains.com/idea/), an IDE
-from [JetBrains](https://www.jetbrains.com/), makes developing in Java a lot
-easier. IntelliJ provides you a bunch of great tools like:
 
-* Maven integration for compilation and testing
-* A debugger that allows you to insert breakpoints and inspect data structure
-  internals visually
-* Automatic syntax checking to catch bugs before compilation
-* Autocomplete that lets you use methods in other files without having to look
-  them up
+You can run our autograder starting on *Tuesday, February 7*:
 
-... and a ton of other stuff!
+    $ git push origin master:ag/proj1
 
-Last semester, many students had trouble debugging their code without IntelliJ.
-If you come to office hours for help in debugging, the first question we will
-ask is, "Have you tried stepping through it?" Please be forewarned.
+Please run this sparingly as it only runs `mvn clean compile && mvn test`,
+which you can do locally. Treat this as a sanity check.
+
+Occasionally we might release an update to assignment files:
+
+    $ git pull course master
+
+Finally, when you're satisfied with your submission, submit it:
+
+    $ git push origin master
+    $ git push origin master:submit/proj1
+
+Once you've submitted Project 1, you can confirm by checking that your latest
+code has been pushed to the `submit/proj1` branch on Github.
 
 ## Starter Code
 
@@ -309,7 +358,7 @@ you go along due to the fact that the given tests don't cover all edge cases.
 ### Part 2: Testing
 
 We can't emphasize enough how important it is to test your code! Like we said
-earlier, writing valid tests that **test actual code** (i.e., don't write
+earlier, writing **10** valid tests that **test actual code** (i.e., don't write
 `assertEquals(true, true);`, or we'll be mad at you) is worth 10% of your
 project grade.
 
