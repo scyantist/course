@@ -99,13 +99,13 @@ public class Schema {
 
     for (int i = 0; i < this.fields.size(); i++) {
       DataBox thisType = this.fieldTypes.get(i);
-      DataBox otherType = this.fieldTypes.get(i);
+      DataBox otherType = otherSchema.fieldTypes.get(i);
 
       if (thisType.type() != otherType.type()) {
         return false;
       }
 
-      if (thisType.equals(DataBox.Types.STRING) && thisType.getSize() != otherType.getSize()) {
+      if (thisType.type().equals(DataBox.Types.STRING) && thisType.getSize() != otherType.getSize()) {
         return false;
       }
     }

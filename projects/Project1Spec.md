@@ -13,8 +13,9 @@ will be out of 100 points:
   `src/test/java/edu/berkeley/cs186/database`, so you can run them as you write
   code and inspect the tests to debug. Our testing provides extensive unit
   testing and some integration (end-to-end) testing.
-* 10 points for writing **10** of your own, valid tests. The tests **must** pass both
-  your implementation and the staff solution to be considered valid tests.
+* 10 points for writing **10** of your own, valid tests. The tests **must**
+  pass both your implementation and the staff solution to be considered valid
+  tests.
 * 30 points for passing additional hidden tests.
 
 ## Background
@@ -77,7 +78,8 @@ these projects you should have Java 7 (aka 1.7) installed on your machine,
 **not** Java 8 (aka 1.8). You can download Java 7 from Oracle's
 [website](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u75-oth-JPR).
 
-**NOTE**: If you are a Mac user, you can download [Homebrew](http://brew.sh) and run `brew cask install java7`.
+**NOTE**: If you are a Mac user, you can download [Homebrew](http://brew.sh)
+and run `brew cask install java7`.
 
 **NOTE**: If you're running Windows, make sure that the JDK directory where you
 installed Java (e.g. `C:\Program Files\Java\jdk1.7.0_79`) is added to both your
@@ -93,7 +95,8 @@ If you are a Mac user:
 
 1. Download a package manager like [Homebrew](http://brew.sh) or
 [apt-get](http://linux.die.net/man/8/apt-get)
-2. Run `brew install maven` or `sudo apt-get install maven3`, respectively to install Maven.
+2. Run `brew install maven` or `sudo apt-get install maven3`, respectively to
+   install Maven.
 
 If you are a Windows user:
 0. Follow these [instructions](https://www.mkyong.com/maven/how-to-install-maven-in-windows/),
@@ -130,7 +133,8 @@ ask is, "Have you tried stepping through it?" Please be forewarned.
 ### IntelliJ Configuration
 
 1. Open IntelliJ.
-2. Import the project (make sure you're importing the projects folder, which contains pom.xml).
+2. Import the project (make sure you're importing the projects folder, which
+   contains pom.xml).
 3. For Windows, set SDK to C:\Program Files\Java\jdk1.7* (Same as JAVA_HOME).
    For Mac, see this [Stack Overflow
    post](http://stackoverflow.com/questions/18144660/what-is-path-of-jdk-on-mac).
@@ -139,7 +143,7 @@ ask is, "Have you tried stepping through it?" Please be forewarned.
 5. In the Maven projects panel, you should see the project. If not, refresh.
 6. In the lifecycle drag-down menu, double-click on compile to build the
    project. Double-click on test after compiling.
-7. You should be able to pass 146 tests.
+7. You should be able to pass 118 of the 146 tests.
 
 ### Compiling and Running Tests
 
@@ -245,8 +249,8 @@ but maybe excessively so. To turn off these warnings:
 3. Under the Java section, you should see the "Java language level migration
    aids" subsection.
 4. Uncheck "Usages of API which isn't available at the configured language
-   level." (Alternatively, you can change the severity from Error to Warning or to
-   Weak Warning.)
+   level." (Alternatively, you can change the severity from Error to Warning or
+   to Weak Warning.)
 
 ### Query Generation
 
